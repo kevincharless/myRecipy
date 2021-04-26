@@ -19,10 +19,6 @@ const LandingPage = () => {
                                             <img src={Arrow} alt="arrow" />
                                             <Link className="ms-2" to="/home">Homepage</Link>
                                         </li>
-                                        <li>
-                                            <img src={Arrow} alt="arrow" />
-                                            <Link className="ms-2" to="/bookmark">Bookmark</Link>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
