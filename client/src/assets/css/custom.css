@@ -1,0 +1,302 @@
+@font-face {
+  font-family: georgia;
+  src: url(../fonts/georgia.ttf);
+}
+
+@font-face {
+  font-family: lucida;
+  src: url(../fonts/lucida.TTF);
+}
+
+@font-face {
+  font-family: lucida-caligraphy;
+  src: url(../fonts/lucida-caligraphy.ttf);
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.nav-toggle {
+  background: #fa31ab;
+  color: #fff;
+  position: fixed;
+  padding: 10px 13px;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  text-align: center;
+  z-index: 99999;
+}
+
+a.nav-toggle {
+  color: #fff;
+  text-decoration: none;
+}
+
+.index-body {
+  background: url("../img/home-bg.png") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.index-sidebar {
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.index-sidebar-heading img {
+  width: 200px;
+}
+
+.index-sidebar-list {
+  font-family: georgia;
+  font-size: 20pt;
+}
+
+.index-sidebar-list ul li {
+  list-style: none;
+  padding: 10px;
+  color: #44d462;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.index-sidebar-list ul li a {
+  color: #44d462;
+  text-decoration: none;
+}
+
+.index-sidebar-list .submenu {
+  font-size: 15pt;
+}
+
+.home-start {
+  margin-top: 100px;
+}
+
+.home-header {
+  background: url("../img/header-bg.jpg") no-repeat;
+  padding: 15px 0;
+  background-size: cover;
+}
+
+.home-header img {
+  width: 160px;
+}
+
+.home-sidebar {
+  background: #f7f7f7;
+  min-height: 100vh;
+  border-right: 2px solid #ffca2c;
+}
+
+.home-sidebar .avatar-img {
+  margin-bottom: 15px;
+}
+
+.home-sidebar .button-section {
+  border-bottom: 2px solid #000;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+.home-sidebar .logged-info {
+  padding: 10px 0;
+  font-size: 12pt;
+}
+
+.home-sidebar .logged-info p {
+  margin: 0;
+}
+
+.home-sidebar .button-section a {
+  text-decoration: none;
+  color: #000;
+}
+
+.home-sidebar-list {
+  font-family: lucida;
+  font-size: 15pt;
+}
+
+.home-sidebar-list ul li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+.home-sidebar-list ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.home-sidebar-list ul li i.fa {
+  margin-right: 10px;
+  font-size: 20pt;
+}
+
+.home-sidebar-list .submenu a {
+  font-size: 12pt;
+  font-family: lucida;
+  color: #000;
+}
+
+.home-content-heading {
+  font-family: lucida;
+  font-style: italic;
+  color: #fa31ab;
+}
+
+.home-content-body {
+  background: #dfdbdc;
+}
+
+.home-content-body .card {
+  border: 1px solid #ffca2c;
+  font-size: 14pt;
+  font-family: lucid-caligraphy;
+  font-style: italic;
+}
+
+.home-content-body .card img {
+  height: 200px;
+}
+
+.home-content-body a {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+}
+
+.recipe-content-heading {
+  font-family: lucida;
+  font-style: italic;
+  color: #000;
+}
+
+.recipe-content-body a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.recipe-content-body {
+  font-family: georgia;
+  font-size: 13pt;
+}
+
+.recipe-content-body h3.recipe-content-subheading {
+  font-size: 16pt;
+  padding: 8px 0 8px 8px;
+  background: #dfdbdc;
+}
+
+.addrecipe-content-heading {
+  font-family: lucida;
+  color: #000;
+}
+
+.addrecipe-content-btn {
+  text-align: right;
+}
+
+.addrecipe-content-btn .btn-primary {
+  color: #000;
+  background: #ffca2c;
+}
+
+.addrecipe-content-body {
+  font-family: lucida;
+  font-size: 13pt;
+}
+
+.addrecipe-content-body .form-group {
+  margin-bottom: 20px;
+}
+
+.myrecipe-content-heading {
+  font-family: lucida;
+  color: #000;
+}
+
+.myrecipe-content-btn {
+  text-align: right;
+}
+
+.myrecipe-content-btn .btn-primary {
+  color: #000;
+  background: #ffca2c;
+}
+
+.myrecipe-content-body {
+  font-family: lucida;
+  font-size: 13pt;
+}
+
+.myrecipe-content-body .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-box {
+  margin-top: 60px;
+  min-height: 400px;
+}
+
+.auth-box .card {
+  border: 2px solid #ffca2c;
+  padding: 20px;
+}
+
+.auth-box .card .card-header {
+  background: #fff;
+  color: #fa31ab;
+}
+
+.auth-box .card .card-body .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-box .card .card-body .form-group input {
+  border: 1px solid #a5a5a5;
+}
+
+.auth-box .card .card-body button.btn {
+  background: #ffca2c;
+  width: 100%;
+  margin-top: 60px;
+  border-radius: 150px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  padding-top: 12px;
+  text-align: center;
+  background: #dfdbdc;
+}
+
+@media screen and (max-width: 680px) {
+  .home-header {
+    text-align: center;
+    background: url("../img/header-bg.jpg") no-repeat;
+    padding: 15px 0;
+  }
+
+  .home-content-body .card {
+    font-size: 9pt;
+  }
+
+  .home-content-body .card img {
+    height: 100px;
+  }
+
+  .home-sidebar {
+    z-index: 99999999;
+  }
+
+  .home-start {
+    margin-top: 140px;
+  }
+}
