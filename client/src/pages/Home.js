@@ -8,10 +8,22 @@ import Sidebar from '../components/Sidebar'
 
 const Home = ({ user, posts, isModalActive, setIsModalActive, logout }) => {
     const [showPosts, setShowPosts] = useState([]);
+    const [searchPost, setSearchPost] = useState('');
+    const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
         setShowPosts(posts?.posts?.filter(post => post?.isShow === true))
     }, [posts])
+
+    useEffect(() => {
+        if (searchPost !== '') {
+            setSearchResult(
+                showPosts.filter(post => 
+                    post.title.toUpperCase().includes(searchPost.toUpperCase())
+                )
+            )
+        }
+    }, [setSearchPost, showPosts, searchPost])
 
     return (
         <>
@@ -26,7 +38,7 @@ const Home = ({ user, posts, isModalActive, setIsModalActive, logout }) => {
                                     <div className="col-md-6"></div>
                                     <div className="col-md-6">
                                     <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="Search..." />
+                                        <input type="text" className="form-control" value={searchPost} onChange={e => setSearchPost(e.target.value)} placeholder="Search..." />
                                         <button className="input-group-text btn btn-warning">Search</button>
                                     </div>
                                     </div>
@@ -36,20 +48,42 @@ const Home = ({ user, posts, isModalActive, setIsModalActive, logout }) => {
                             <div className="col-12 mt-2">
                                 <h3 className="home-content-heading">Most Recent</h3>
                                 <div className="row home-content-body py-3">
-                                    {showPosts?.map((post, index) => (
-                                        <PostCard post={post} key={index} />
-                                    ))}
+                                    {!posts?.isLoading ? (
+                                        searchPost !== '' ? (
+                                            searchResult?.map((post, index) => (
+                                                <PostCard post={post} key={index} />
+                                            ))
+                                        ) : (
+                                            showPosts?.map((post, index) => (
+                                                <PostCard post={post} key={index} />
+                                            ))
+                                        )
+                                    ) : (
+                                        <p>Loading...</p>
+                                    )}
                                 </div>
                             </div>
 
                             <div className="col-12 mt-5">
                                 <h3 className="home-content-heading">Most Popular</h3>
                                 <div className="row home-content-body py-3">
-                                    {showPosts.sort((a, b) => {
-                                        return b.likes.length - a.likes.length;
-                                    }).map((post, index) => (
-                                        <PostCard post={post} key={index} />
-                                    ))}
+                                    {!posts?.isLoading ? (
+                                        searchPost !== '' ? (
+                                            searchResult?.sort((a, b) => {
+                                                return b.likes.length - a.likes.length;
+                                            }).map((post, index) => (
+                                                <PostCard post={post} key={index} />
+                                            ))
+                                        ) : (
+                                            showPosts?.sort((a, b) => {
+                                                return b.likes.length - a.likes.length;
+                                            }).map((post, index) => (
+                                                <PostCard post={post} key={index} />
+                                            ))
+                                        )
+                                    ) : (
+                                        <p>Loading...</p>
+                                    )}
                                 </div>
                             </div>
                         </div>
