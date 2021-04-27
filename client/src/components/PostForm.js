@@ -19,7 +19,7 @@ const PostForm = ({ editPost, user, post, formTitle, firstButton, firstButtonFun
         if (editPost) {
             dispatch(updatePost(post?._id, formData));
         } else {
-            dispatch(createPost({ ...formData, name: user.name, isShow: true, creator: user?._id }));
+            dispatch(createPost({ ...formData, name: user.name, isShow: true, creator: user?._id, likes: {} }));
         }
         history.push('/myrecipe');
     }
