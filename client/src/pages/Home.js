@@ -70,7 +70,7 @@ const Home = ({ user, posts, isModalActive, setIsModalActive, logout }) => {
                                     {!posts?.isLoading ? (
                                         searchPost !== '' ? (
                                             searchResult?.sort((a, b) => {
-                                                return b.likes.length - a.likes.length;
+                                                return b?.likes?.length - a?.likes?.length;
                                             }).map((post, index) => (
                                                 <PostCard post={post} key={index} />
                                             ))
