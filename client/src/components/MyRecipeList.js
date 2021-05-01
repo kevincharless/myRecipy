@@ -23,9 +23,16 @@ const MyRecipeList = ({ index, recipe, setPost, setIsDelete }) => {
             <td>{recipe?.title}</td>
             <td>{String(recipe?.isShow).toUpperCase()}</td>
             <td align="center">
-                <button className="btn btn-primary btn-sm mb-2" onClick={() => handleHidePost()}>{recipe?.isShow ? 'Hide' : 'Show'}</button>
-                <Link to={`/editpost/${recipe?._id}`} className="btn btn-warning btn-sm mb-2 mx-2">Edit</Link>
-                <button className="btn btn-danger btn-sm mb-2" onClick={handleDelete}>Delete</button>
+                {recipe?._id ? (
+                    <>
+                    <button className="btn btn-primary btn-sm mb-2" onClick={() => handleHidePost()}>{recipe?.isShow ? 'Hide' : 'Show'}</button>
+                    <Link to={`/editpost/${recipe?._id}`} className="btn btn-warning btn-sm mb-2 mx-2">Edit</Link>
+                    <button className="btn btn-danger btn-sm mb-2" onClick={handleDelete}>Delete</button>
+                    </>
+                ) : (
+                    <p>Recipe is being created</p>
+                )}
+                
             </td>
         </tr>
         

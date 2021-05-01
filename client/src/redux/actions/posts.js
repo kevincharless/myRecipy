@@ -19,9 +19,10 @@ export const getPosts = () => async (dispatch) => {
 
 export const createPost = (post) => async (dispatch) => {
     try {
-        dispatch({ type: CREATE, payload: post });
+        const { data } = await api.createPost(post);
 
-        await api.createPost(post);
+        dispatch({ type: CREATE, payload: data });
+
 
     } catch (error) {
         console.log(error);
@@ -39,7 +40,6 @@ export const hidePost = (postId, post) => async (dispatch) => {
 }
 
 export const updatePost = (postId, post) => async (dispatch) => {
-    console.log(post)
     try {
         await api.updatePost(postId, post);
 
