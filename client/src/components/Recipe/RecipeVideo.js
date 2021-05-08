@@ -16,8 +16,7 @@ const RecipeVideo = ({ videoLink }) => {
         <div className="col-md-5 recipe-content-video">
             <h3 className="recipe-content-subheading">Video Tutorial :</h3>
             {videoLink ? (
-            //  <iframe title="Tutorial Video" width="100%" height="200" src={videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <YouTube videoId={url} opts={opts} onReady={(e) => e.target.pauseVideo()} />
+                <YouTube videoId={url} opts={opts} onReady={(e) => e.target.pauseVideo()} />
             ) : (
                 <p style={{ opacity: '0.75' }}>no video available</p>
             )}

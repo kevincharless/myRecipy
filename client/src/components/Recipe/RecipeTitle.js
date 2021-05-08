@@ -1,6 +1,6 @@
-const RecipeTitle = () => {
+const RecipeTitle = ({title}) => {
     return (
-        <h3 className="recipe-content-heading">Pancakes</h3>
+        <h3 className="recipe-content-heading">{title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
     )
 }
 

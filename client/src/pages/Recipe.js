@@ -64,7 +64,6 @@ const Recipe = ({ user, posts, isModalActive, setIsModalActive, logout }) => {
         setCommentData({ _id: '', name: '', comment: '' });
         setDeleteModal(false);
     }
-
     return (
         <div>
             <Navbar />
